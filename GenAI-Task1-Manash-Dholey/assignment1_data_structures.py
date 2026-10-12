@@ -1,7 +1,7 @@
 
 print("===== Task 1: Lists & Tuples =====")
 
-products = ["Laptop", "Phone", "Headphones", "Keyboard", "Mouse", "Desk Lamp"]
+products = ["Laptop", "Phone", "Headphones", "Keyboard", "Mouse", "Desk Lamp", "Webcam", "Monitor", "Backpack"]
 
 sample_product = ("Laptop", 55000, "Electronics")
 
@@ -86,7 +86,9 @@ print("\n===== Task 4: Combined Operations =====")
 catalog = []
 for i in range(len(products)):
     name = products[i]
-    catalog.append((name, price_dict[name], categories[i]))
+    if name not in price_dict:
+        continue
+    catalog.append((name, price_dict[name], categories[i] if len(categories) > i else None))
 print("catalog:")
 for item in catalog:
     print("  ", item)
