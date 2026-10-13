@@ -107,3 +107,7 @@ for category in category_to_products:
         biggest_category = category
 print("Category with most products:", biggest_category)
 print("Products in it:", category_to_products[biggest_category])
+cubes = [x**3 for x in range(6)]
+even = [ x for x in range(20) if x%2 != 0]
+cubes_dic = { i: i** 3 for i in range(20)}
+
