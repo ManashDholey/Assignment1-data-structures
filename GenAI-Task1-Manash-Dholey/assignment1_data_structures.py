@@ -121,4 +121,8 @@ def display_info(**info):
 cubes = [x**3 for x in range(6)]
 even = [ x for x in range(20) if x%2 != 0]
 cubes_dic = { i: i** 3 for i in range(20)}
+def calc(a,b):
+  return a+b,a*b
+sum_val,prod_val= calc(4,6)
+print(sum_val,prod_val)
 
