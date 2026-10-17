@@ -107,3 +107,22 @@ for category in category_to_products:
         biggest_category = category
 print("Category with most products:", biggest_category)
 print("Products in it:", category_to_products[biggest_category])
+## variable number of argument
+def total(*numers):
+  return sum(numbers)
+print(total(1,2,3,4,5,6,7,8))
+def display_info(**info):
+  for key,value in info.items():
+    print(key,value)
+ display_info(name="Manash",age =20,city="kolkata" )   
+
+
+
+cubes = [x**3 for x in range(6)]
+even = [ x for x in range(20) if x%2 != 0]
+cubes_dic = { i: i** 3 for i in range(20)}
+def calc(a,b):
+  return a+b,a*b
+sum_val,prod_val= calc(4,6)
+print(sum_val,prod_val)
+
