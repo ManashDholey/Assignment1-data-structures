@@ -85,13 +85,15 @@ def safe_shopping_cart():
                 break
             try:
                 price = float(input(f"Enter price for '{item}': "))
-            except ValueError:
-                print("Invalid input: price must be a number")
+                if price < 0:
+                    raise ValueError(f"Negative price not allowed for '{item}': {price}")
+            except ValueError as e:
+                print(f"Error occurred: {e}")
                 continue
             cart_list.append((item, price))
 
         for item, price in cart_list:
-            if not isinstance(price, (int, float)) or price < 0:
+            if not isinstance(price, (int, float))  or price < 0:
                 raise ValueError(f"Invalid price for item '{item}': {price}")
             total_cost += price
         print("total items in cart:", len(cart_list))
@@ -111,9 +113,12 @@ def main():
         file_render_error_handling()
         safe_shopping_cart()
         user_age = input("Enter your age: ")
-        if user_age is not None and not user_age.isdigit():
+        if user_age is None or user_age.strip() == "":
+            raise ValueError("Invalid input: age cannot be empty")
+        try:
+            user_age = int(user_age)
+        except ValueError:
             raise ValueError("Invalid input: not an integer")
-        user_age = int(user_age)
         if user_age < 0:
             raise ValueError("Invalid input: age cannot be negative")
         if user_age <= 1 or user_age >= 120:
