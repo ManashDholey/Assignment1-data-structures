@@ -237,4 +237,32 @@ print("End of the Task six: NumPy Array Fourier Transform Operations")
 
 print("Start of the Task seven: NumPy Array Random Operations")
 
+# Given daily sales data (assuming index 0 = Day 1, index 1 = Day 2, etc.)
+sales = np.array([1200, 1500, 900, 2000, 1800, 1700, 1600])
+
+# 1. Total weekly sales
+total_sales = np.sum(sales)
+
+# 2. Average daily sales
+avg_sales = np.mean(sales)
+
+# 3. Highest and lowest sales day (using 1-based indexing for cleaner readability)
+highest_day = np.argmax(sales) + 1
+lowest_day = np.argmin(sales) + 1
+
+# 4. Standard deviation of sales
+std_sales = np.std(sales)
+
+# 5. Identify days where sales were above average
+# This creates a boolean mask and finds the indices (adding 1 for Day numbers)
+above_avg_days = np.where(sales > avg_sales)[0] + 1
+
+# Print Results
+print(f"1. Total weekly sales: {total_sales}")
+print(f"2. Average daily sales: {avg_sales:.2f}")
+print(f"3. Highest sales day: Day {highest_day} ({np.max(sales)})")
+print(f"   Lowest sales day: Day {lowest_day} ({np.min(sales)})")
+print(f"4. Standard deviation of sales: {std_sales:.2f}")
+print(f"5. Days with sales above average: Days {above_avg_days.tolist()}")
+
 print("End of the Task seven: NumPy Array Random Operations")
