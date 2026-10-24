@@ -1,3 +1,6 @@
 *.zip
 __pycache__/
 *.pyc   
+output/
+Natural language processing (NLP)/Assignment-1_NLP/data_set/
+Natural language processing (NLP)/Assignment-1_NLP/output/
