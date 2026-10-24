@@ -193,15 +193,46 @@ print("overall mean-",result_of_overall_mean)
 print("End of the Task four: NumPy Array Statistical Operations")
 
 print("Start of the Task five: NumPy Array Linear Algebra Operations")
+marks = np.array([78,85,90,66,72,88,95,60])
+result_of_mean_marks = np.mean(marks) ## Mean of the marks
+print("mean of marks-",result_of_mean_marks)
+result_of_median_marks = np.median(marks) ## Median of the marks
+print("median of marks-",result_of_median_marks)
+result_of_variance_marks = np.var(marks) ## Variance of the marks
+print("variance of marks-",result_of_variance_marks)
+result_of_standard_deviation_marks = np.std(marks) ## Standard deviation of the marks
+print("standard deviation of marks-",result_of_standard_deviation_marks)
+result_of_minimum_and_maximum_marks = np.min(marks), np.max(marks) ## Minimum and maximum of the marks
+print("minimum and maximum of marks-",result_of_minimum_and_maximum_marks)
+result_of_range_marks = np.ptp(marks) ## Range(max - min) of the marks
+print("range of marks-",result_of_range_marks)
+result_of_range_marks_one = np.max(marks) - np.min(marks)
+print("range of marks (using max-min)-",result_of_range_marks_one)
 
 
 print("End of the Task five: NumPy Array Linear Algebra Operations")
 
 
 print("Start of the Task six: NumPy Array Fourier Transform Operations")
+result_short_of_marks = np.sort(marks) ## Sorted array of marks
+print("sorted marks-",result_short_of_marks)
+# 2. Find Percentiles
+p25 = np.percentile(marks, 25)
+p50 = np.percentile(marks, 50)  # This is also the Median
+p75 = np.percentile(marks, 75)
 
+print(f"2. Percentiles:")
+print(f"   - 25th percentile: {p25}")
+print(f"   - 50th percentile: {p50}")
+print(f"   - 75th percentile: {p75}")
 
+# 3. Count students scoring above the average marks
+average_marks = np.mean(marks)
+# Creates a boolean array (True/False) and counts the True values
+students_above_average = np.sum(marks > average_marks) 
 
+print(f"3. Average Mark: {average_marks}")
+print(f"   - Number of students above average: {students_above_average}")
 print("End of the Task six: NumPy Array Fourier Transform Operations")
 
 print("Start of the Task seven: NumPy Array Random Operations")
